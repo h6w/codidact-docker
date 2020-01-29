@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: build
+    image: codidact
+    ports:
+      - "80:80"
+      - "443:443"
+  db:
+    image: postgres:12.1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
